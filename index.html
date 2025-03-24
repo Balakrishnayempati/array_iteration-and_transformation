@@ -262,7 +262,7 @@ img {
   container.style.gridTemplateColumns="auto auto auto auto"
   container.style.gap="20px"
   let ob=store.forEach((val)=>{
-    child_container=document.createElement("div")
+    let child_container=document.createElement("div")
     child_container.style.border="3px solid black"
     child_container.style.borderRadius="2%"
     child_container.style.boxShadow="10px 0px 10px 0px black"
@@ -275,11 +275,7 @@ img {
       let rating=document.createElement("h4")
       let btn=document.createElement("button")
       btn.innerText="Add to cart"
-      btn.style.textAlign="center"
-btn.addEventListener("click", function() {
-  alert(`${val.title} added to cart!`);
-    child_container.style.display = "none";
-});
+      // btn.style.textAlign="center"
 
 
 
@@ -309,15 +305,19 @@ btn.addEventListener("click", function() {
     // console.log(val.rating)
     // console.log(val.rating.rate)
     // console.log(val.rating.count)
+    btn.addEventListener("click", function() {
+  alert(`${val.title} added to cart!`);
+    child_container.style.display = "none";
+});
     child_container.append(id,title,price,description,category,image,rating,btn)
    console.log(container) 
    container.append(child_container)
-})
+
    document.body.append(container)
 
 //      container.append(id,price,description,image,rating)
 //      console.log(container)
-
+})
     </script>
 </body>
 </html>
